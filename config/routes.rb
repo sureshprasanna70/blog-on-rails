@@ -1,7 +1,11 @@
 Fordecise::Application.routes.draw do
+  resources :blogs
+
+  
+
   get "/" => "home#index", :as => "root"
   devise_for :views
-  devise_for :admins
+  #devise_for :admins
   devise_for :users
   
     # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,40 @@
+<div class="container">
+<h1>The CEG Spartanz Blog</h1>
+     
+        
+        <%if user_signed_in?%>
+        <div class="row">
+        <div class="col-md-4">Title</div>
+        <div class="col-md-4">Visibility</div>
+        <div class="col-md-2">Editor</div>
+        <div class="col-md-2">Delete</div>
+        </div>
+        <% @blogs.each do |blog| %>
+        <div class="row">
+        <div class="col-md-4"><%= blog.title %></div>
+        <div class="col-md-4"><%= blog.published %></div>  
+        <div class="col-md-2"><%= link_to 'Edit', edit_blog_path(blog) %></div>
+        <div class="col-md-2"><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+        </div>
+        <%end%>
+        <br>
+        <div class="row">
+        <div class="col-md-12"><%= link_to 'New Post', new_blog_path %></div>
+        </div>
+        <%else%>
+        <% @blogs.each do |blog| %>
+        <%if blog.published?%>
+        <div class="row">
+        <div class="col-md-8 title"><%= blog.title %></div>
+        <div class="col-md-8 content"><%= blog.content %></div>
+        <div class="col-md-6"><%= link_to 'View article', blog %></div>
+        </div>
+        <% end %>
+        <% end %>
+
+        <%end%>
+      </div>
+    </div>
+
+
+

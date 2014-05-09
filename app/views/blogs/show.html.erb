@@ -1,0 +1,23 @@
+<div class="container">
+<div class="row">
+<div class="col-md-12 title">
+    <%= @blog.title %>
+</div>
+
+<div class="col-md-12 content">
+  <%= @blog.content %>
+</div>
+
+<div class="col-md-6">
+<%if user_signed_in?%>
+<p>
+  <strong>Visibility</strong>
+  <%= @blog.published %>
+</p>
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%end%>
+<%= link_to 'Back', blogs_path %>
+</div>
+</div>
+</div>
+

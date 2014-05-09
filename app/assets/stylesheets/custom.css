@@ -1,0 +1,48 @@
+.body,.navbar{
+ 	background-color: #9B2424;
+ 	color: #fff;
+ 	padding: 0px;
+ 	border: 0px;
+ }
+textarea{
+	border-color: #2190cf;
+	border-width: 1px;
+}
+input,input:focus{
+	border-style: none;
+	border-bottom-style: double;
+	background-color: transparent;
+	border-collapse: collapse !important;
+	border-color: #fff;
+	outline: none;
+	color: #fff;
+}
+
+a,.navbar-default .navbar-nav > li > a{
+	color: #fff;
+	font-weight: bold;
+	
+
+}
+a:hover,.navbar-default .navbar-nav > li > a:hover{
+	color: #fff;
+	font-weight: bold;
+	text-decoration: underline;
+
+}
+input[type="submit"]{
+	margin-top: 0.4%;
+	border-style:double;
+}
+.title{
+	font-size: 25px;
+	font-variant: small-caps;
+	font-style: italic;
+}
+.content{
+	font-size: 15px;
+	font-style: italic;
+}
+.nav{
+	background-color: 
+}

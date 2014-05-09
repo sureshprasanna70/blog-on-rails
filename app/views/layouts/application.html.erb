@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Fordecise</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <title>CEG SPARTANZ</title>
+  
+  
+  <%= stylesheet_link_tag    "application", "data-turbolinks-track" => true %>
+
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-	<ul class="nav pull-right">
+<body class="body">
+	<div class="container">
+	<nav class="navbar navbar-default">
+	<ul class="nav navbar-nav">
 		  <li><%= link_to "Home",root_path%></li>
-		    <li><%= link_to "Help","#"%></li>
-		      <% if user_signed_in? %>
-			       <li id="fat-menu" class="dropdown">
-				   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
-							            <ul class="dropdown-menu">
-									            <li><%= link_to "Profile", edit_user_registration_path %></li>
-										        <li><%= link_to "Settings", '#' %></li>
-											    
-												<li><%= link_to "Logout", destroy_user_session_path, :method => :delete %>
-												</li>
-										</ul>
-												        </li>
-    
-																	      <% else %>
-																		          <li><%= link_to "Sign in", new_user_session_path %></li>
-																			    <% end %>
-																		    </ul>
+		  <li><%= link_to "Videos",root_path%></li>
+		  <li><%= link_to "Photos",root_path%></li>
+		  <li><%= link_to "Blog","/blogs"%></li>
+		      	<% if user_signed_in? %>
+		      	
+			       	<li id="fat-menu" class="dropdown pull-right">
+						   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account 
+						   	<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><%= link_to "Profile", edit_user_registration_path %></li>
+								<li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+							</ul>
+					</li>
+				
+				<% else %>
+					<li><%= link_to "Sign in", new_user_session_path %></li>
+				<% end %>
+	</ul>
+</nav>
+</div>
 <%= yield %>
+ 
+<script src="assets/javascript/bootstrap.min.js"></script>
 
 </body>
 </html>
