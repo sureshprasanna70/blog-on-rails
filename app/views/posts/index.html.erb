@@ -1,0 +1,40 @@
+<div class="container">
+<h1>BLOG</h1>
+        
+    <%if user_signed_in?%>
+    <div class="row">
+        <div class="col-xs-4">Title</div>
+        <div class="col-xs-4">Status</div>
+        <div class="col-xs-1">View</div>
+        <div class="col-xs-1">Editor</div>
+        <div class="col-xs-1">Delete</div>
+      </div>
+    <% @posts.each do |post| %>
+      <div class="row">
+        <div class="col-xs-4"><%= post.title %></div>
+        <div class="col-xs-4"><%= post.publish %></div>
+        <div class="col-xs-1"><%= link_to 'Show', post %></div>
+        <div class="col-xs-1"><%= link_to 'Edit', edit_post_path(post) %></div>
+        <div class="col-xs-1"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+      </div>
+    <% end %>
+    <%= link_to 'New Post', new_post_path %>
+    <% else %>
+     <% @posts.each do |post| %>
+      <%if post.publish?%>
+      <div class="row">
+        <div class="col-xs-8"><b><%= post.title %></b></div>
+        <div class="col-xs-8"><%= post.content %></div>
+        <div class="col-xs-6"><%= link_to 'Show', post %></div>
+      </div>
+      <% end %>  
+    <% end %>
+    <% end %>
+
+  </tbody>
+</table>
+
+<br>
+
+
+</div>

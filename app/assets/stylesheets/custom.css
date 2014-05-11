@@ -5,8 +5,11 @@
  	border: 0px;
  }
 textarea{
-	border-color: #2190cf;
-	border-width: 1px;
+	border-color: white;
+	border-width: 0.5px;
+	color: white;
+	border-style: double;
+	background-color: transparent;
 }
 input,input:focus{
 	border-style: none;
@@ -25,7 +28,8 @@ a,.navbar-default .navbar-nav > li > a{
 
 }
 a:hover,.navbar-default .navbar-nav > li > a:hover{
-	color: #fff;
+	background-color: white;
+	color: #9B2424;
 	font-weight: bold;
 	text-decoration: underline;
 

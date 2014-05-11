@@ -1,10 +1,12 @@
 Fordecise::Application.routes.draw do
-  resources :blogs
-
   
 
+  resources :posts
+
+  #resources :post_attachments
+
   get "/" => "home#index", :as => "root"
-  devise_for :views
+  #devise_for :views
   #devise_for :admins
   devise_for :users
   
