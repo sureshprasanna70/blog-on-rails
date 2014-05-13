@@ -1,15 +1,58 @@
-.body,.navbar{
- 	background-color: #9B2424;
- 	color: #fff;
- 	padding: 0px;
- 	border: 0px;
- }
-textarea{
-	border-color: white;
-	border-width: 0.5px;
-	color: white;
-	border-style: double;
-	background-color: transparent;
+h1,h2,h3.h4.h2,h6,body,div,p{
+	font-family: 'sui';
+}
+a{
+	color: #fff;
+	font-weight: bold;
+	font-family: 'sui';
+	font-variant: small-caps;
+}
+a:hover{
+	color: #9B2424;
+	font-weight: bold;
+	text-decoration: underline;
+	font-family: 'sui';	
+	
+}
+.body{
+	background-color: #9B2424;
+	color: #fff;
+	padding: 0px;
+	border: 0px;
+	font-size: 18px;
+	-webkit-animation:shake 2s ease-in;
+	-moz-animation: shake 2s ease-in;
+	-ms-animation: shake 2s ease-in;
+	animation: shake 2s ease-in;
+	
+}
+.banner{
+	font-size: 60px;
+	text-align: center;
+	text-shadow: 4px 3px 2px rgb(0,0,0), 9px 8px 0px rgba(0, 0, 0, 0.15);
+	-webkit-animation: slideInRight 2s ease-in;
+	-moz-animation: slideInRight 2s ease-in;
+	-ms-animation: slideInRight 2s ease-in;
+	animation: slideInRight 2s ease-in;
+	
+	
+}
+.content{
+	font-size: 20px;
+	font-family: 'muso-i';
+	word-break:break-all;
+}
+footer,.footer{
+	font-size: 15px;
+	background-color: white;
+	color: #9B2424;
+	margin-bottom: 0;
+}
+.footer:hover>.move{
+	-webkit-animation: lightSpeedOut 0.5s ease-out;
+	-moz-animation: lightSpeedOut 0.5s ease-out;
+	-ms-animation: lightSpeedOut 0.5s ease-out;
+	animation: lightSpeedOut 0.5s ease-out;
 }
 input,input:focus{
 	border-style: none;
@@ -19,34 +62,102 @@ input,input:focus{
 	border-color: #fff;
 	outline: none;
 	color: #fff;
+	font-family: 'sui';
 }
-
-a,.navbar-default .navbar-nav > li > a{
+input[type="submit"],input[type="file"]{
+	margin-top: 0.4%;
+	border-style:double;
+	font-family: 'sui';
+}
+nav{
+	outline: solid;
+	-webkit-animation: slideInLeft 3s ease-out;
+	-moz-animation: slideInLeft 3s ease-out;
+	-ms-animation: slideInLeft 3s ease-out;
+	animation: slideInLeft 3s ease-out;
+	
+	
+}
+.navbar{
+	background-color: #9B2424;
+	color: #fff;
+	padding: 0px;
+	border: 0px;
+	font-size: 18px;	
+}
+.navbar-default .navbar-nav > li > a{
 	color: #fff;
 	font-weight: bold;
-	
-
+	font-family: 'sui';
+	font-variant: small-caps;
 }
-a:hover,.navbar-default .navbar-nav > li > a:hover{
+.navbar-default .navbar-nav > li > a:hover{
 	background-color: white;
 	color: #9B2424;
 	font-weight: bold;
 	text-decoration: underline;
+	font-family: 'sui';
+	-webkit-animation: tada 1s ease-in;
+	-moz-animation: tada 1s ease-in;
+	-ms-animation: tada 1s ease-in;
+	animation: tada 1s ease-in;
+	
 
 }
-input[type="submit"]{
-	margin-top: 0.4%;
-	border-style:double;
+.pagination-sm,a[rel="prev start"],a[rel="next_page"],.previous_page,.next_page,a[rel="next"]{
+background-color: white;
+color: #9B2424;
+padding: 5px;
+font-family: 'sui';
 }
+.page-title{
+	font-family: 'monts';
+	text-align: center;
+	font-size: 30px;
+	text-transform: uppercase;
+}
+
+.show{
+	font-size: 18px;
+	font-family: 'sui';
+	text-align: left;
+	padding: 1%;
+}
+.show:hover{
+	background-color: white;
+}
+
+.sidebar{
+	outline: none;
+	position: fixed;
+	background-color: #9B2424;
+}
+
+textarea{
+	border-color: white;
+	border-width: 0.2px;
+	color: white;
+	border-style: double;
+	background-color: transparent;
+	font-family: 'sui';
+}
+.tagline{
+	font-size: 30px;
+	text-align: right;
+	position: relative;
+	text-shadow: 4px 3px 2px rgb(0,0,0), 9px 8px 0px rgba(0, 0, 0, 0.15);
+	-webkit-animation: slideInRight 2s ease-in;
+	-moz-animation: slideInRight 2s ease-in;
+	-ms-animation: slideInRight 2s ease-in;
+	animation: slideInRight 2s ease-in;
+	
+}
+
 .title{
-	font-size: 25px;
-	font-variant: small-caps;
-	font-style: italic;
+	font-size: 30px;
+	font-family: 'muso';
+	font-style: normal;
+
+
 }
-.content{
-	font-size: 15px;
-	font-style: italic;
-}
-.nav{
-	background-color: 
-}
+

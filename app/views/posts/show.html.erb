@@ -1,23 +1,23 @@
 <div class="container">
-<p id="notice"><%= notice %></p>
+	<div class="row">
+		<div class="col-md-12 page-title">
+			<%= @post.title %>
+		</div>
+		<% @post_attachments.each do |p| %>
+		<div class="col-md-3"><img src="<%=p.avatar_url%>" height="200px" width="250px"%></div>
+		<% end %>
+		
+		<div class="col-md-8 content">
+			<%= @post.content %>
+		</div>
+		
+		
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
-
-<p>
-  <strong>Publish:</strong>
-  <%= @post.publish %>
-</p>
-<% @post_attachments.each do |p| %>
-  <%= image_tag p.avatar_url %>
-<% end %>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+	</div>
+	
+	<%if user_signed_in?%>
+	<%= link_to 'Edit', edit_post_path(@post) %> |
+	<%end%>
+	<br>
+	<%= link_to 'Back', posts_path %>
 </div>

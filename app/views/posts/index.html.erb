@@ -1,40 +1,52 @@
 <div class="container">
-<h1>BLOG</h1>
-        
-    <%if user_signed_in?%>
-    <div class="row">
-        <div class="col-xs-4">Title</div>
-        <div class="col-xs-4">Status</div>
-        <div class="col-xs-1">View</div>
-        <div class="col-xs-1">Editor</div>
-        <div class="col-xs-1">Delete</div>
-      </div>
-    <% @posts.each do |post| %>
-      <div class="row">
-        <div class="col-xs-4"><%= post.title %></div>
-        <div class="col-xs-4"><%= post.publish %></div>
-        <div class="col-xs-1"><%= link_to 'Show', post %></div>
-        <div class="col-xs-1"><%= link_to 'Edit', edit_post_path(post) %></div>
-        <div class="col-xs-1"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-      </div>
-    <% end %>
-    <%= link_to 'New Post', new_post_path %>
-    <% else %>
-     <% @posts.each do |post| %>
-      <%if post.publish?%>
-      <div class="row">
-        <div class="col-xs-8"><b><%= post.title %></b></div>
-        <div class="col-xs-8"><%= post.content %></div>
-        <div class="col-xs-6"><%= link_to 'Show', post %></div>
-      </div>
-      <% end %>  
-    <% end %>
-    <% end %>
+  <div class="blog-area">
+  <div class="page-title">THE BLOG</div>
+  <%if user_signed_in?%>
+  <div class="row">
+    <div class="col-xs-4">Title</div>
+    <div class="col-xs-4">Status</div>
+    <div class="col-xs-1">View</div>
+    <div class="col-xs-1">Editor</div>
+    <div class="col-xs-1">Delete</div>
 
-  </tbody>
-</table>
+  </div>
+  <% @posts.each do |post| %>
+  <div class="row">
+    <div class="col-xs-4"><%= post.title %></div>
+    <div class="col-xs-4"><%= post.publish %></div>
+    
 
-<br>
+    <div class="col-xs-1"><%= link_to 'Show', post %></div>
+    <div class="col-xs-1"><%= link_to 'Edit', edit_post_path(post) %></div>
+    <div class="col-xs-1"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+  </div>
 
+  <% end %>
+  <%= link_to 'New Post', new_post_path %>
+  <% else %>
+  <%@posts.each do |single|%>
+  <div class="row">
+    <div class="col-md-12 title"><i class="fa fa-angle-double-right"></i><%= single.title %></div>
 
+  </div>
+  <div class="row">
+    <%@post_attachments.each do |p|%>
+    <%if  p.post_id==single.id%>
+    <div class="col-md-1"><img src="<%=p.avatar_url%>" height="75px" width="90px"%></div>
+    <%end%>
+    <%end%>
+    <div class="col-md-9 content"><%= single.content[1..50] %>..</div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-5"><i class="fa fa-calendar-o"></i>
+    Posted at : <%= single.created_at%></div>
+    <br>
+    <div class="col-md-1"><%= link_to 'Show', single,:class =>"show" %></div>
+  </div>
+  <%end%>
+  <% end %>
+  <br>
+  <%= will_paginate @post,:class=>"pagination-sm pagination"%>
+</div>
 </div>

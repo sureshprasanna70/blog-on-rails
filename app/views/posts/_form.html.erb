@@ -18,7 +18,7 @@
   </div>
   <div class="field">
     <%= f.label :content %><br>
-    <%= f.text_area :content %>
+    <%= f.text_area :content :rows=>10 :cols=>100%>
   </div>
    <%= f.fields_for :post_attachments do |p| %>
      <div class="field">
@@ -35,3 +35,5 @@
   </div>
 <% end %>
 </div>
+
+ 

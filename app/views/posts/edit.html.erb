@@ -1,8 +1,14 @@
-<div class="controller">
+<div class="container">
+	<%if user_signed_in?%>
 <h1>Editing post</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @post %> |
 <%= link_to 'Back', posts_path %>
+<%else%>
+Not authorized to edit
+<br>
+<p>If you are admin to edit</p><a href="/users/sign_in">Sign in</a>
+<%end%>
 </div>
