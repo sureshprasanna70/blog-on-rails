@@ -1,6 +1,8 @@
 <div class="container">
   <div class="blog-area">
   <div class="page-title">THE BLOG</div>
+  <%= will_paginate @post,:class=>"pagination-sm pagination pull-right"%>
+  <br><br><br>  
   <%if user_signed_in?%>
   <div class="row">
     <div class="col-xs-4">Title</div>
@@ -14,9 +16,7 @@
   <div class="row">
     <div class="col-xs-4"><%= post.title %></div>
     <div class="col-xs-4"><%= post.publish %></div>
-    
-
-    <div class="col-xs-1"><%= link_to 'Show', post %></div>
+    <div class="  col-xs-1"><%= link_to 'Show', post %></div>
     <div class="col-xs-1"><%= link_to 'Edit', edit_post_path(post) %></div>
     <div class="col-xs-1"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
   </div>
@@ -35,7 +35,7 @@
     <div class="col-md-1"><img src="<%=p.avatar_url%>" height="75px" width="90px"%></div>
     <%end%>
     <%end%>
-    <div class="col-md-9 content"><%= single.content[1..50] %>..</div>
+    <div class="col-md-11 content"><%= single.content[1..100] %>..</div>
   </div>
 
   <div class="row">
@@ -43,10 +43,16 @@
     Posted at : <%= single.created_at%></div>
     <br>
     <div class="col-md-1"><%= link_to 'Show', single,:class =>"show" %></div>
+
   </div>
+  <div class="row">
+    <div class="col-md-12 sep">&gt;</div>
+  </div>
+
   <%end%>
-  <% end %>
-  <br>
-  <%= will_paginate @post,:class=>"pagination-sm pagination"%>
+
+    <% end %>
+    
+  <%= will_paginate @post,:class=>"pagination-sm pagination pull-right"%>
 </div>
 </div>
