@@ -1,0 +1,95 @@
+<h1>Listing photos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image title</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @photos.each do |photo| %>
+      <tr>
+        <td><%= photo.image_title %></td>
+        <td><%= link_to 'Show', photo %></td>
+        <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
+        <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Photo', new_photo_path %>
+
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <title>Galleriffic | Minimal implementation</title>
+  <script type="text/javascript" src="/assets/jquery.js"></script>
+  <script type="text/javascript" src="/assets/photos.js"></script>
+</head>
+<body>
+ 
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      
+        <div class="row" id="thumbs">
+        <ul class="thumbs col-md-2">
+          <li>
+            <a class="thumb" href="/assets/c.jpg" title="Title #0">
+              <img src="/assets/c.jpg" width="50" height"50"/>
+            </a>
+          </li>
+
+          <li>
+            <a class="thumb" href="/assets/crypt.jpg" title="Title #1">
+              <img src="/assets/crypt.jpg" width="50" height"50"/></a>
+          </li>
+          <li>
+            <a class="thumb" href="/assets/algo.jpg" title="Title #2">
+              <img src="/assets/algo.jpg" width="50" height"50"/>
+            </a>
+          </li>
+          <li>
+            <a class="thumb" href="/assets/geek.jpg" title="Title #3">
+              <img src="/assets/geek.jpg" width="50" height"50"/></a>
+          </li>
+          <li>
+            <a class="thumb" href="/assets/c.jpg" title="Title #4"><img src="/assets/c.jpg" width="50" height"50"/></a>
+          </li>
+
+
+        </ul>
+      
+      <div id="slideshow" class="col-md-10 slideshow"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Small modal -->
+<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
+
+
+  <div id="footer">&copy; 2009 Trent Foley</div>
+  <script type="text/javascript">
+      // We only want these styles applied when javascript is enabled
+      $('div.navigation').css({'width' : '300px', 'float' : 'left'});
+      $('div.content').css('display', 'block');
+
+      $(document).ready(function() {        
+        // Initialize Minimal Galleriffic Gallery
+        $('#thumbs').galleriffic({
+          imageContainerSel:      '#slideshow',
+          controlsContainerSel:   '#controls'
+        });
+      });
+      </script>
+    </body>
+    </html>

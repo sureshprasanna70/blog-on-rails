@@ -6,9 +6,19 @@
 <meta property="og:url" content="<%=$og_url%><%=$url%>"/>
 <meta property="og:description" content="<%=$og_description%>"/>
 <head>
+
 	<title>CEG SPARTANZ|<%=@title%></title>
 	<%= stylesheet_link_tag    "application", "media"=>"all","data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application", "media"=>"all","data-turbolinks-track" => true %>
+	<script type="text/javascript">
+	$(document).ready(function() {				
+				// Initialize Minimal Galleriffic Gallery
+				$('#thumbs').galleriffic({
+					imageContainerSel:      '#slideshow',
+					controlsContainerSel:   '#controls'
+				});
+			});
+	</script>
 	<%= csrf_meta_tags %>
 </head>
 <body class="body">
@@ -38,6 +48,9 @@
 						</ul>
 					</nav>
 				</div>
+				
+
+
 				<%= yield %>
 				<div class="footer">
 					<div class="container">

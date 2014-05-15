@@ -199,4 +199,7 @@ textarea{
 	font-style: normal;
 	word-spacing: 0.25em;
 }
+.thumbs{
+	list-style: none;
+}
 
