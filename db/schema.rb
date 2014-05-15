@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140511053508) do
+ActiveRecord::Schema.define(version: 20140515100727) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -63,6 +63,19 @@ ActiveRecord::Schema.define(version: 20140511053508) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "video_attachments", force: true do |t|
+    t.integer  "post_id"
+    t.string   "avatar"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "videos", force: true do |t|
+    t.text     "caption"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "views", force: true do |t|
     t.string   "email",                  default: "", null: false
