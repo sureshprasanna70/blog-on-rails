@@ -27,10 +27,10 @@ a:hover{
 	font-size: 18px;
 	word-spacing: 0.25em;
 
-	-webkit-animation:shake 2s ease-in;
-	-moz-animation: shake 2s ease-in;
-	-ms-animation: shake 2s ease-in;
-	animation: shake 2s ease-in;
+	-webkit-animation:fadeInUpBig 2s ease-in;
+	-moz-animation: fadeInUpBig  2s ease-in;
+	-ms-animation: fadeInUpBig  2s ease-in;
+	animation: fadeInUpBig  2s ease-in;
 	
 }
 .banner{
@@ -39,10 +39,10 @@ a:hover{
 	text-shadow: 4px 3px 2px rgb(0,0,0), 9px 8px 0px rgba(0, 0, 0, 0.15);
 	word-spacing: 0.25em;
 
-	-webkit-animation: slideInRight 2s ease-in;
-	-moz-animation: slideInRight 2s ease-in;
-	-ms-animation: slideInRight 2s ease-in;
-	animation: slideInRight 2s ease-in;
+	-webkit-animation: fadeInDownBig 2s;
+	-moz-animation: fadeInDownBig 2s ;
+	-ms-animation: fadeInDownBig 2s ;
+	animation: fadeInDownBig 2s ;
 	
 	
 }
@@ -82,15 +82,20 @@ input[type="submit"],input[type="file"]{
 	border-style:double;
 	font-family: 'sui';
 }
+.tagline [name="waving-flag"]{
+	-webkit-animation: wobble 5s  infinite ease-out;
+	-moz-animation: wobble 5s infinite ease-out;
+	-ms-animation: wobble 5s infinite ease-out ;
+	animation: wobble 5s infinite ease-out;
+}
 nav{
 	outline: solid;
 	background-color: #9B2424;
 	word-spacing: 0.25em;
-
-	-webkit-animation: slideInLeft 3s;
-	-moz-animation: slideInLeft 3s ;
-	-ms-animation: slideInLeft 3s ;
-	animation: slideInLeft 3s ;
+	-webkit-animation: slideInLeft 1s;
+	-moz-animation: slideInLeft 1s ;
+	-ms-animation: slideInLeft 1s ;
+	animation: slideInLeft 1s ;
 	
 	
 }
@@ -159,6 +164,7 @@ nav{
 }
 .show:hover{
 	background-color: white;
+	padding-left: 1%;
 }
 
 .sidebar{
@@ -202,4 +208,5 @@ textarea{
 .thumbs{
 	list-style: none;
 }
+
 
