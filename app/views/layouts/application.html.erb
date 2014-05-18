@@ -27,7 +27,7 @@
 						<i class="fa fa-home "></i> HOME</a></li>
 						<li><a href="#"><i class="fa fa-video-camera"></i> VIDEOS</a></li>
 						<li><a href="#"><i class="fa fa-camera"></i> PHOTOS</a></li>
-						<li><a onclick="getposts()"><i class="fa fa-pencil"></i> BLOG</a></li>
+						<li><a id="getposts"><i class="fa fa-pencil"></i> BLOG</a></li>
 						
 
 						<% if user_signed_in? %>
@@ -44,7 +44,9 @@
 					</nav>
 				</div>
 				
+				<div class="container" id="blog">
 
+				</div>
 
 				<%= yield %>
 				<div class="footer">
