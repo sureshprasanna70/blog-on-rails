@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<meta charset="utf-8">
 <meta property="og:title" content="<%=$og_title%>"/>
 <meta property="og:type" content="article"/>
 <meta property="og:image" content="<%=$og_image%>"/>
@@ -10,21 +11,15 @@
 	<title>CEG SPARTANZ|<%=@title%></title>
 	<%= stylesheet_link_tag    "application", "media"=>"all","data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application", "media"=>"all","data-turbolinks-track" => true %>
-	<script type="text/javascript">
-	$(document).ready(function() {				
-				// Initialize Minimal Galleriffic Gallery
-				$('#thumbs').galleriffic({
-					imageContainerSel:      '#slideshow',
-					controlsContainerSel:   '#controls'
-				});
-			});
-	</script>
+	<script type="text/javascript" src="assets/jquery.js"></script>
+
+	<script type="text/javascript" src="assets/kustom.js"></script>
 	<%= csrf_meta_tags %>
 </head>
 <body class="body">
 	<div class="container">
 		<div class="banner">CEG SPARTANZ</div>
-		<div class="tagline">-The official entertainers of CEG <i class="fa fa-flag"></i></div>
+		<div class="tagline">-The official entertainers of CEG <i class="fa fa-flag" name="waving-flag"></i></div>
 		<nav class="navbar navbar-default">
 			<ul class="nav navbar-nav">
 				<li>
@@ -32,7 +27,7 @@
 						<i class="fa fa-home "></i> HOME</a></li>
 						<li><a href="#"><i class="fa fa-video-camera"></i> VIDEOS</a></li>
 						<li><a href="#"><i class="fa fa-camera"></i> PHOTOS</a></li>
-						<li><a href="/posts/"><i class="fa fa-pencil"></i> BLOG</a></li>
+						<li><a onclick="getposts()"><i class="fa fa-pencil"></i> BLOG</a></li>
 						
 
 						<% if user_signed_in? %>
@@ -66,9 +61,8 @@
 										<div class="row">
 											<ul class="nav">
 												<li>
-													<a class="footer" href="">
-														<i class="fa fa-arrow-right move"></i>
-														Home
+													<a class="footer" href="/">
+													<i class="fa fa-arrow-right move"></i> Home
 													</a>
 												</li>
 												<li>
