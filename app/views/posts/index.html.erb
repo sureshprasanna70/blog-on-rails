@@ -1,60 +1,48 @@
 <div class="container">
   <div class="blog-area">
-  <div class="page-title">THE BLOG</div>
-  <%= will_paginate @post,:class=>"pagination-sm pagination pull-right"%>
-  <br><br><br>  
-  <%if user_signed_in?%>
-  <div class="row">
-    <div class="col-xs-4">Title</div>
-    <div class="col-xs-4">Status</div>
-    <div class="col-xs-1">View</div>
-    <div class="col-xs-1">Editor</div>
-    <div class="col-xs-1">Delete</div>
+    <div class="page-title">THE BLOG</div>
+    <%= will_paginate @post,:class=>"pagination-sm pagination pull-right"%>
+    <br><br><br>  
+    <%if user_signed_in?%>
+    <div class="row">
+      <div class="col-xs-4">Title</div>
+      <div class="col-xs-4">Status</div>
+      <div class="col-xs-1">View</div>
+      <div class="col-xs-1">Editor</div>
+      <div class="col-xs-1">Delete</div>
 
-  </div>
-  <% @posts.each do |post| %>
-  <div class="row">
-    <div class="col-xs-4"><%= post.title %></div>
-    <div class="col-xs-4"><%= post.publish %></div>
-    <div class="col-xs-1"><%= link_to 'Show', post,:class=>"show" %></div>
-    <div class="col-xs-1"><%= link_to 'Edit', edit_post_path(post),:class=>"show" %></div>
-    <div class="col-xs-1"><%= link_to 'Destroy', post,:class=>"show", method: :delete, data: { confirm: 'Are you sure?' } %></div>
-  </div>
-
-  <% end %>
-  <%= link_to 'New Post', new_post_path %>
-  <% else %>
-  <%@posts.each do |single|%>
-  <div class="row">
-    <div class="col-md-12 title"><i class="fa fa-angle-double-right"></i>
-      <%= single.title %>
     </div>
-  </div>
-  <div class="row">
-    <%@post_attachments.each do |p|%>
-    <%if  p.post_id==single.id%>
-    <div class="col-md-1">
-      <img src="<%=p.avatar_url%>" height="75px" width="90px"%>
+    <% @posts.each do |post| %>
+    <div class="row">
+      <div class="col-xs-4"><%= post.title %></div>
+      <div class="col-xs-4"><%= post.publish %></div>
+      <div class="col-xs-1"><%= link_to 'Show', post,:class=>"show" %></div>
+      <div class="col-xs-1"><%= link_to 'Edit', edit_post_path(post),:class=>"show" %></div>
+      <div class="col-xs-1"><%= link_to 'Destroy', post,:class=>"show", method: :delete, data: { confirm: 'Are you sure?' } %></div>
     </div>
-    <%end%>
-    <%end%>
-    <div class="col-md-11 content"><%= single.content[0..100] %>..</div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-5"><i class="fa fa-calendar-o"></i>
-    Posted at : <%= single.created_at%></div>
-    <br>
-    <div class="col-md-1"><%= link_to 'Show', single,:class =>"show" %></div>
-  </div>
-  <div class="row">
-    <div class="col-md-12 sep">    </div>
-  </div>
-
-  <%end%>
 
     <% end %>
-    
-  <%= will_paginate @post,:class=>"pagination-sm pagination pull-right"%>
-</div>
+    <%= link_to 'New Post', new_post_path %>
+    <% else %>
+    <%@posts.each do |single|%>
+    <div class="col-md-3 post">
+      <div class="row">
+       <div class="col-md-12 title"><i class="fa fa-angle-double-right"></i>
+        <%=link_to(single) do%><%= single.title %></a><% end %>
+      </div>
+      <%@post_attachments.each do |p|%>
+      <%if  p.post_id==single.id%>
+      <div class="col-md-1">
+        <img src="<%=p.avatar_url%>" height="75px" width="90px"%>
+      </div>
+      <%end%>
+      <%end%>
+      <div class="col-md-11 content"><%= single.content[0..100] %>..</div>
+      <div class="col-md-8"><i class="fa fa-calendar-o"></i>
+        <%= single.created_at%></div>
+      </div>
+    </div>
+    <%end%>
+    <% end %>
+  </div>
 </div>

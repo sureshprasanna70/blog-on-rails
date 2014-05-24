@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   $og_url=""
   $url=""
   $og_description=""
-  WillPaginate.per_page = 10
+  WillPaginate.per_page = 9
   # GET /posts
   # GET /posts.json
   def index
