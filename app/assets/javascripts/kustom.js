@@ -14,16 +14,21 @@ $(document).ready(function(){
 				console.log("ajax call success")
 				for(var i=0;i<data.length;i++){
 
-					toHtml+='<div class="container"><div class="row">'+
-					'<div class="col-md-12 title"><i class="fa fa-angle-double-right"></i>'+
-					data[i].title+
-					'</div></div><div class="row"> <div class="col-md-11 content">'+
-					data[i].content.substr(0,100)+
-					'</div></div><div class="row"><div class="col-md-5"><i class="fa fa-calendar-o"></i>Posted at :'+
-					data[i].created_at+
-					'</div><br><div class="col-md-1"><a class="show" href="'+data[i].url+'">SHOW'+
-					'</a></div></div><div class="row"><div class="col-md-12 sep"></div></div>'+
-					'</div></div>'
+					toHtml+='<div class="col-md-3 post">'+
+	'<div class="row">'+
+		'<div class="col-md-12 title"><i class="fa fa-angle-double-right"></i>'+
+			'<a href="'+data[i].url+'">'+
+			data[i].title+
+			'</a>'+
+		'</div>'+
+		'<div class="col-md-11 content">'+
+		data[i].content.substr(0,100)+
+		'</div>'+
+		'<div class="col-md-8"><i class="fa fa-calendar-o"></i> Posted at:<br> '+
+			data[i].created_at.substr(0,10) +
+		'</div>'+
+	'</div>'+
+'</div>'
 
 				}
 				console.log("HOME EMPTIED")
