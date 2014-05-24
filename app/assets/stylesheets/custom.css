@@ -179,6 +179,11 @@ nav{
 	border-left-style: inset;
 	border-color: #9B2424;
 }
+.loader{
+	text-align: center;
+	margin-left: 50%;
+	margin-top: 5%;
+}
 .sep{
 	background-image:url('hrline.png');
 	background-repeat:repeat-x;

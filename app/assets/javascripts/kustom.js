@@ -5,6 +5,10 @@ $(document).ready(function(){
 	$("#getposts").on("click",function(){
 		console.log("Kill");
 		console.log("function call");
+		console.log("HOME EMPTIED")
+		var home=document.getElementById('home')
+		home.innerHTML=""
+		$('#loader').html('<img class="loader" src="assets/ajax-loading.gif">')
 		$.ajax({
 			type:"GET",
 			url:"/posts.json",
@@ -31,9 +35,7 @@ $(document).ready(function(){
 '</div>'
 
 				}
-				console.log("HOME EMPTIED")
-				var home=document.getElementById('home')
-				home.innerHTML=""
+				
 				console.log("BLOG FILLED")
 				var blog=document.getElementById('blog')
 				blog.innerHTML=toHtml
