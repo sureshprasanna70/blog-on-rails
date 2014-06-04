@@ -1,6 +1,10 @@
 Fordecise::Application.routes.draw do
   
 
+  resources :gallery_attachments
+
+  resources :galleries
+
   resources :posts
 
   #resources :post_attachments
