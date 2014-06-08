@@ -1,12 +1,16 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Caption:</strong>
-  <%= @gallery.caption %>
-</p>
+<p><%= @gallery.caption %></p>
+<%if user_signed_in?%>
 <% @gallery_attachments.each do |p| %>
   <%= image_tag p.photos_url, :size => "150x150" %>
-   <%= link_to "Destroy", p, method: :delete %>
+  <%= link_to "Destroy", p, method: :delete %>
 <% end %>
 <%= link_to 'Edit', edit_gallery_path(@gallery) %> |
 <%= link_to 'Back', galleries_path %>
+<% else %>
+<% @gallery_attachments.each do |p| %>
+  <%= image_tag p.photos_url, :size => "150x150" %>
+<%end%>
+<% end%>
+</div>

@@ -1,27 +1,17 @@
-<h1>Listing galleries</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Caption</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @galleries.each do |gallery| %>
-      <tr>
-        <td><%= gallery.caption %></td>
-        <td><%= link_to 'Show', gallery %></td>
-        <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
-        <td><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
+Listing galleries
+<% if user_signed_in?%>
+<% @galleries.each do |gallery| %>
+        <%= gallery.caption %>
+        <%= link_to 'Show', gallery %>
+        <%= link_to 'Edit', edit_gallery_path(gallery) %>
+        <%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
 <%= link_to 'New Gallery', new_gallery_path %>
+
+<% else %>
+      <% @galleries.each do |gallery| %>
+      <%= gallery.caption %>
+      <%= link_to 'Show', gallery %>
+      <% end %>
+<% end %>
+
