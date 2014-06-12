@@ -15,8 +15,12 @@ class GalleriesController < ApplicationController
 
   # GET /galleries/new
   def new
-    @gallery = Gallery.new
-    @gallery_attachment = @gallery.gallery_attachments.build
+    if user_signed_in?
+      @gallery = Gallery.new
+      @gallery_attachment = @gallery.gallery_attachments.build
+  else
+    redirect_to('user/sign_in')
+    end
   end
 
   # GET /galleries/1/edit
