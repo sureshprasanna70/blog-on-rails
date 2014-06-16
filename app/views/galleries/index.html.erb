@@ -1,17 +1,27 @@
-Listing galleries
-<% if user_signed_in?%>
-<% @galleries.each do |gallery| %>
-        <%= gallery.caption %>
-        <%= link_to 'Show', gallery %>
-        <%= link_to 'Edit', edit_gallery_path(gallery) %>
-        <%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
-<%= link_to 'New Gallery', new_gallery_path %>
+<div class="container">
+	<% if user_signed_in?%>
+	<% @galleries.each do |gallery| %>
+	<%= gallery.caption %>
+	<%= link_to 'Show', gallery %>
+	<%= link_to 'Edit', edit_gallery_path(gallery) %>
 
-<% else %>
-      <% @galleries.each do |gallery| %>
-      <%= gallery.caption %>
-      <%= link_to 'Show', gallery %>
-      <% end %>
-<% end %>
+	<%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% end %>
+	<%= link_to 'New Gallery', new_gallery_path %>
 
+	<% else %>
+
+	<% @galleries.each do |gallery| %>
+	<div class="row">
+		<div class="col-md-12">
+			<img src='<%=@gallery_attachments[gallery.id].photos%>' width="100" height='100'>
+		</div>
+
+		<div class="col-md-1 text-center">
+			<p><%= link_to gallery.caption, gallery %></p>
+		</div>
+	</div>
+	<% end %>
+	
+	<% end %>
+</div>

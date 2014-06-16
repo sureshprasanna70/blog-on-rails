@@ -4,7 +4,10 @@ class GalleriesController < ApplicationController
   # GET /galleries
   # GET /galleries.json
   def index
+    @title="GALLERY"
+    meta("index","","")
     @galleries = Gallery.all
+     @gallery_attachments=GalleryAttachment.all; 
   end
 
   # GET /galleries/1
@@ -19,7 +22,7 @@ class GalleriesController < ApplicationController
       @gallery = Gallery.new
       @gallery_attachment = @gallery.gallery_attachments.build
   else
-    redirect_to('user/sign_in')
+    redirect_to('/users/sign_in')
     end
   end
 
@@ -30,6 +33,7 @@ class GalleriesController < ApplicationController
   # POST /galleries
   # POST /galleries.json
   def create
+    if user_signed_in?
     @gallery = Gallery.new(gallery_params)
 
     respond_to do |format|
@@ -44,11 +48,16 @@ class GalleriesController < ApplicationController
         format.json { render json: @gallery.errors, status: :unprocessable_entity }
       end
     end
+    else
+      redirect_to('/users/sign_in')
+    end
+
   end
 
   # PATCH/PUT /galleries/1
   # PATCH/PUT /galleries/1.json
   def update
+    if user_signed_in?
     respond_to do |format|
       if @gallery.update(gallery_params)
         format.html { redirect_to @gallery, notice: 'Gallery was successfully updated.' }
@@ -58,18 +67,41 @@ class GalleriesController < ApplicationController
         format.json { render json: @gallery.errors, status: :unprocessable_entity }
       end
     end
+  else
+    redirect_to('/users/sign_in')
+    end
   end
 
   # DELETE /galleries/1
   # DELETE /galleries/1.json
   def destroy
+    if user_signed_in?
     @gallery.destroy
     respond_to do |format|
       format.html { redirect_to galleries_url }
       format.json { head :no_content }
     end
+  else
+    redirect_to('/users/sign_in')
+    end
   end
+  def meta(fn_name,cust_title,cust_url)
+    if fn_name=="index"
+      puts "INDEX"
 
+      $og_title="CEG SPARTANZ|GALLERY"
+      $og_image="/assets/"
+      $og_url="http://cegspartanz.in/galleries"
+      $og_description="The official website of CEG-SPARTANZ"
+    elsif fn_name=="show"
+      $og_title=cust_title
+      $og_image="/assets/"
+      $og_url="http://www.cegspartanz.in/galleries/"
+      $url=cust_url
+      $og_description="The official website of CEG-SPARTANZ"
+    end
+    
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_gallery
