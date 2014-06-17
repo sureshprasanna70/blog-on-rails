@@ -8,9 +8,7 @@
 	<%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %>
 	<% end %>
 	<%= link_to 'New Gallery', new_gallery_path %>
-
 	<% else %>
-
 	<% @galleries.each do |gallery| %>
 	<div class="row">
 		<div class="col-md-12">
@@ -22,6 +20,5 @@
 		</div>
 	</div>
 	<% end %>
-	
 	<% end %>
 </div>
