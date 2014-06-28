@@ -12,6 +12,7 @@
 	<%= stylesheet_link_tag    "application",media: "all", "data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application", media: "all","data-turbolinks-track" =>true %>
 	<%= javascript_include_tag "bootstrap.min", media: "all","data-turbolinks-track" =>true %>
+	<%= javascript_include_tag "kustom", media: "all","data-turbolinks-track" =>true %>
 	<%= csrf_meta_tags %>
 </head>
 <body class="body">
@@ -24,7 +25,7 @@
 					<a href="/">
 						<i class="fa fa-home "></i> HOME</a></li>
 						<li><a href="#"><i class="fa fa-video-camera"></i> VIDEOS</a></li>
-						<li><a href="#"><i class="fa fa-camera"></i> PHOTOS</a></li>
+						<li><a href="/galleries/"><i class="fa fa-camera"></i> PHOTOS</a></li>
 						<li><a id="getposts"><i class="fa fa-pencil"></i> BLOG</a></li>
 						
 
@@ -62,7 +63,7 @@
 											<ul class="nav">
 												<li>
 													<a class="footer" href="/">
-													<i class="fa fa-arrow-right move"></i> Home
+														<i class="fa fa-arrow-right move"></i> Home
 													</a>
 												</li>
 												<li>
