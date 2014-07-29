@@ -11,8 +11,9 @@ test:
   
 
 production:
-  adapter: mysql
-  database: test
-  user: 'root'
-  password: 123456
+  adapter: pg
+  host: ec2-54-204-35-132.compute-1.amazonaws.com
+  database: d85ibm0iiabik0   
+  user: 'ugmjgdsugifjrq'
+  password: 'oU4EH_p8AT6T9zSfAO9qnFNuG5'
   
