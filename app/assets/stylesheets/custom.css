@@ -3,7 +3,11 @@
 	src: url('SEGOEUIL.eot');
 	src: local('fonts'), url('SEGOEUIL.woff') format('woff'), url('SEGOEUIL.ttf') format('truetype');
 }
-
+@font-face {
+	font-family: 'freshman';
+	src: url('freshman.eot');
+	src: local('fonts'), url('freshman.woff') format('woff'), url('freshman.ttf') format('truetype');
+}
 @font-face{
 	font-family: "monts";
 	src: url('Montserrat.ttf') format('truetype');
@@ -26,7 +30,7 @@
 }
 
 h1,h2,h3.h4.h2,h6,body,div,p{
-	font-family: 'sui';
+        font-family:'freshman';
 	word-spacing: 0.25em;
 
 }
