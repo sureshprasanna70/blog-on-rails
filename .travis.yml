@@ -6,3 +6,8 @@ env:
   # - DB=sqlite
   # # - DB=mysql
   - DB=postgresql
+deploy:
+  provider: heroku
+  api_key: 'ca73ca03-0f3c-4fe3-b94e-ee6e19b044a0'
+  app: spartanz
+  on: master
