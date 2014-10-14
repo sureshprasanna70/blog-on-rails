@@ -4,10 +4,11 @@ development:
   user: 'root'
   password: 123456
 test:
-  adapter: mysql
+  adapter: postgresql
+  host: ec2-54-204-35-132.compute-1.amazonaws.com
   database: test
-  user: 'root'
-  password: 123456
+  user: 'ugmjgdsugifjrq'
+  password: 'oU4EH_p8AT6T9zSfAO9qnFNuG5'
   
 
 production:
@@ -15,5 +16,4 @@ production:
   host: ec2-54-204-35-132.compute-1.amazonaws.com
   database: d85ibm0iiabik0   
   user: 'ugmjgdsugifjrq'
-  password: 'oU4EH_p8AT6T9zSfAO9qnFNuG5'
-  
+  password: 'oU4EH_p8AT6T9zSfAO9qnFNuG5'  
