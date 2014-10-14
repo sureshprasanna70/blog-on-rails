@@ -1,0 +1,8 @@
+anguage: ruby
+cache: bundler
+rvm:
+  - 2.1.2
+env:
+  # - DB=sqlite
+  # # - DB=mysql
+  - DB=postgresql
