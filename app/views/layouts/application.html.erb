@@ -8,21 +8,94 @@
 <meta property="og:description" content="<%=$og_description%>"/>
 <head>
 
-	<title>CEG SPARTANZ|<%=@title%></title>
-	<%= stylesheet_link_tag    "application",media: "all", "data-turbolinks-track" => true %>
-	<%= javascript_include_tag "application", media: "all","data-turbolinks-track" =>true %>
-	<%= javascript_include_tag "bootstrap.min", media: "all","data-turbolinks-track" =>true %>
-	<%= javascript_include_tag "kustom", media: "all","data-turbolinks-track" =>true %>
-	<%= csrf_meta_tags %>
+<title>STUDENTS FM|<%=@title%></title>
+<%= stylesheet_link_tag    "application",media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "application", media: "all","data-turbolinks-track" =>true %>
+<%= javascript_include_tag "bootstrap.min", media: "all","data-turbolinks-track" =>true %>
+<%= javascript_include_tag "kustom", media: "all","data-turbolinks-track" =>true %>
+<%= csrf_meta_tags %>
 </head>
 <body class="body">
-  
-         <img src="/assets/ceg.png" width="130" height="90"/>       <img class="pull-right" width="90" src="/assets/sparta.png"/></h1>
-  <br>
-  <div>
-  <img class="under" src="/assets/build.GIF"/>
-  <h1 class="header"><b>BRACE YOURSELF...<br>THE BATTLE GROUND IS GETTING READY</b><br><br>
+<div id="fb-root"></div>
 
+<div class="container">
+  <div class="banner">Students FM</div>
+  <nav class="navbar navbar-default">
+    <ul class="nav navbar-nav">
+      <li>
+      <a href="/">
+        <i class="fa fa-home "></i> HOME</a></li>
+      <li><a href="/galleries/"><i class="fa fa-camera"></i> PHOTOS</a></li>
+      <li><a href="/posts"><i class="fa fa-pencil"></i> BLOG</a></li>
+
+
+      <% if user_signed_in? %>
+        <li id="fat-menu" class="dropdown pull-right">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account 
+          <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "Profile", edit_user_registration_path %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+        </ul>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+</div>
+
+<div class="container" id="blog">
+  <div id="loader"></div>
+
+</div>
+
+<%= yield %>
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9">
+        <div class="row">
+          <h4>
+            <span><i class="fa fa-sitemap "></i>SITE MAP</span> 
+          </h4>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="row">
+              <ul class="nav">
+                <li>
+                <a class="footer" href="/">
+                  <i class="fa fa-arrow-right move"></i> Home
+                </a>
+                </li>
+                <li>
+                <a class="footer" href="">
+                  <i class="fa fa-arrow-right move "></i>Photo
+                </a>
+                </li>
+                <li>
+                <a class="footer" href="">
+                  <i class="fa fa-arrow-right move"></i>
+                  Video</a></li>
+                <li>
+                <a class="footer" href="">
+                  <i class="fa fa-arrow-right move"></i>
+                  Blog
+                </a></li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-						</body>
-						</html>
+</footer>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+          fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>

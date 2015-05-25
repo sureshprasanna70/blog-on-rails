@@ -3,12 +3,6 @@ development:
   database: test
   user: 'root'
   password: 123456
-test:
-  adapter: postgresql
-  host: travis-test.cw1ncdao8fvd.ap-southeast-1.rds.amazonaws.com
-  database: spartanz_test
-  user: 'travis'
-  password: 'myboytravis'
 production:
   adapter: postgresql
   host: ec2-54-204-35-132.compute-1.amazonaws.com

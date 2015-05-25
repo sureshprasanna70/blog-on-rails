@@ -9,11 +9,9 @@ class HomeController < ApplicationController
     def meta(fn_name)
 
     if fn_name=="index"
-      og_title="CEG SPARTANZ|HOME"
-      
+      og_title="STUDENTS FM|HOME"
       og_image="/assets/"
-      og_url="http://cegspartanz.in"
-      og_description="The official website of CEG-SPARTANZ"
+      og_url=""
     end
     
   end

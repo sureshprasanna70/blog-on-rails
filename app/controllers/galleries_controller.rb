@@ -89,16 +89,11 @@ class GalleriesController < ApplicationController
     if fn_name=="index"
       puts "INDEX"
 
-      $og_title="CEG SPARTANZ|GALLERY"
+      $og_title="STUDENTS FM|GALLERY"
       $og_image="/assets/"
-      $og_url="http://cegspartanz.in/galleries"
-      $og_description="The official website of CEG-SPARTANZ"
     elsif fn_name=="show"
       $og_title=cust_title
-      $og_image="/assets/"
-      $og_url="http://www.cegspartanz.in/galleries/"
       $url=cust_url
-      $og_description="The official website of CEG-SPARTANZ"
     end
     
   end

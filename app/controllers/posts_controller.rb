@@ -115,16 +115,10 @@ end
   def meta(fn_name,cust_title,cust_url)
     if fn_name=="index"
       puts "INDEX"
-      $og_title="CEG SPARTANZ|BLOG"
-      $og_image="/assets/"
-      $og_url="http://cegspartanz.in/posts"
-      $og_description="The official website of CEG-SPARTANZ"
+      $og_title="STUDENTS FM|BLOG"
     elsif fn_name=="show"
       $og_title=cust_title
-      $og_image="/assets/"
-      $og_url="http://www.cegspartanz.in/posts/"
       $url=cust_url
-      $og_description="The official website of CEG-SPARTANZ"
     end
     
   end
