@@ -1,24 +1,25 @@
 <div class="container">
-	<div class="row">
-		<div class="col-md-12 page-title">
-			<%= @post.title %>
-		</div>
-		<% @post_attachments.each do |p| %>
-		<div class="col-md-3"><img src="<%=p.avatar_url%>" height="200px" width="250px"%></div>
-		<% end %>
-		
-		<div class="col-md-12 content">
-			<%= @post.content %>
-		</div>
-		
-		
-
-	</div>
-	
-	<%if user_signed_in?%>
-	<div class="col-md-2">
-		<%= link_to 'Edit', edit_post_path(@post),:class=>"show" %> 
-		<%end%>
-		<%= link_to 'Back', posts_path,:class=>"show" %>
-	</div>
+<div class="row">
+<div class="col-md-12 page-title">
+<%= @post.title %>
 </div>
+<% @post_attachments.each do |p| %>
+  <div class="col-md-3"><img src="<%=p.avatar_url%>" height="200px" width="250px"%></div>
+<% end %>
+
+<div class="col-md-12 content">
+  <%= @post.content %>
+</div>
+
+
+
+
+          <div class="col-md-2">
+        <%if user_signed_in?%>
+            <%= link_to 'Edit', edit_post_path(@post),:class=>"show" %> 
+          <%end%>
+          <%= link_to 'Back', posts_path,:class=>"show" %>
+        </div>
+      </div>
+
+        </div>

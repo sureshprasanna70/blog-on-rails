@@ -54,7 +54,6 @@ end
       respond_to do |format|
         if @post.save
           if params[:post_attachments]
-            puts "Koi"
               params[:post_attachments]['avatar'].each do |a|
               @post_attachment = @post.post_attachments.create!(:avatar => a, :post_id => @post.id)
             end
@@ -71,9 +70,7 @@ end
     end
       rescue Exception => e
           error_render_method("Invalid image type")
-    
       end
-
   end
  def error_render_method(message)
     @message=message
@@ -114,8 +111,10 @@ end
   end
   def meta(fn_name,cust_title,cust_url)
     if fn_name=="index"
-      puts "INDEX"
       $og_title="STUDENTS FM|BLOG"
+      $og_description="The blog of Students fm.Keep watching this place for updates"
+      $og_image="/assets/"
+      $og_url="www.studentsfm.in/posts"
     elsif fn_name=="show"
       $og_title=cust_title
       $url=cust_url

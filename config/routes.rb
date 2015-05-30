@@ -10,6 +10,7 @@ Fordecise::Application.routes.draw do
   #resources :post_attachments
 
   get "/" => "home#index", :as => "root"
+  get '/contact'=>"home#contact",:as=>"contact"
   #devise_for :views
   #devise_for :admins
   devise_for :users

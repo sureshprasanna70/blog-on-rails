@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8">
+<meta charset="utf-8"/>
 <meta property="og:title" content="<%=$og_title%>"/>
 <meta property="og:type" content="article"/>
 <meta property="og:image" content="<%=$og_image%>"/>
 <meta property="og:url" content="<%=$og_url%><%=$url%>"/>
 <meta property="og:description" content="<%=$og_description%>"/>
-<head>
-
-<title>STUDENTS FM|<%=@title%></title>
+<meta description="<%=$og_description%>"/>
 <%= stylesheet_link_tag    "application",media: "all", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "application", media: "all","data-turbolinks-track" =>true %>
 <%= javascript_include_tag "bootstrap.min", media: "all","data-turbolinks-track" =>true %>
 <%= javascript_include_tag "kustom", media: "all","data-turbolinks-track" =>true %>
 <%= csrf_meta_tags %>
+<head>
+<title>STUDENTS FM|<%=@title%></title>
+
 </head>
 <body class="body">
 <div id="fb-root"></div>
@@ -69,13 +70,13 @@
                 </li>
                 <li>
                 <a class="footer" href="">
-                  <i class="fa fa-arrow-right move "></i>Photo
+                  <i class="fa fa-arrow-right move "></i> Photo
                 </a>
                 </li>
                 <li>
-                <a class="footer" href="">
+                <a class="footer" href="/contact">
                   <i class="fa fa-arrow-right move"></i>
-                  Video</a></li>
+                Contact</a></li>
                 <li>
                 <a class="footer" href="">
                   <i class="fa fa-arrow-right move"></i>
@@ -89,7 +90,6 @@
       </div>
     </div>
   </div>
-</footer>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
